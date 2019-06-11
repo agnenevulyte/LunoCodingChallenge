@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <script type="text/javascript" src="script.js"></script>
+
+  <title>LUNO Uber campaign</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <!-- logo -->
+    <div class="logo-box" id="logo-box-id">
+      <div style="margin-left: 40px;">
+        <div class="logo" onclick="openNav()">
+          <div class="menu-open">&#9776;</div>
+          <a class="svg-logo-wrap">
+            <svg width="120px" height="29px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 120 29.1" enable-background="new 0 0 120 29.1" xml:space="preserve">
+              <g>
+                <path d="M49.4,1c-1.1,0-1.9,0.9-1.9,2v14c0,4.9-3.5,8.3-8.5,8.3c0,0,0,0,0,0c-5,0-8.4-3.4-8.5-8.3V3c0-1.1-0.9-2-1.9-2 c-1,0-1.9,0.9-1.9,2v14.2c0,3.7,1.2,6.8,3.6,8.9c2.1,1.9,5.1,3,8.4,3.1v0H39l0.2,0l0.3,0l0,0c3.2-0.1,6.1-1.2,8.2-3.1 c2.3-2.1,3.5-5.2,3.5-8.9V3C51.3,1.9,50.4,1,49.4,1z"></path>
+                <path d="M18.3,25l-6,0c-4.9,0-8.4-3.4-8.5-8.3v-14c0-1.1-0.9-2-1.9-2c-1,0-1.9,0.9-1.9,2v14.2c0,3.7,1.2,6.8,3.6,8.9 c2.1,1.9,5.1,3,8.4,3.1v0h0.4l0.2,0l0.1,0l0,0h5.6c1.1,0,1.9-0.9,1.9-2C20.2,25.8,19.3,25,18.3,25z"></path>
+                <path d="M82.1,28.1c-1.1,0-1.9-0.9-1.9-2v-14c0-4.9-3.5-8.3-8.5-8.3c0,0,0,0,0,0c-5,0-8.4,3.4-8.5,7.9v14c0,1.5-0.9,2.4-1.9,2.4 c-1,0-1.9-0.9-1.9-2V12c0-3.7,1.2-6.8,3.6-8.9C65,1.1,68,0.1,71.3,0v0h0.4l0.2,0l0.3,0l0,0c3.2,0.1,6.1,1.2,8.2,3.1 C82.8,5.3,84,8.4,84,12v14.2C84,27.2,83.1,28.1,82.1,28.1z"></path>
+                <path d="M105.9,29c-4,0-7.6-1.5-10.2-4.2c-2.5-2.6-3.9-6.1-3.9-9.9v-0.1c0-3.8,1.4-7.3,3.9-9.9c2.6-2.8,6.3-4.3,10.2-4.3 c4,0,7.6,1.5,10.2,4.2c2.5,2.6,3.9,6.1,3.9,9.9v0.1c0,3.8-1.4,7.3-3.9,9.9C113.5,27.5,109.8,29,105.9,29z M105.9,4.2 c-5.7,0-10.1,4.5-10.1,10.5v0.1c0,2.9,1,5.5,2.9,7.5c1.9,2,4.5,3.1,7.3,3.1c5.7,0,10.1-4.5,10.1-10.5v-0.1c0-2.9-1-5.5-2.9-7.5 C111.3,5.3,108.7,4.2,105.9,4.2z"></path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- logo end -->
+    <!-- menu -->
+    <nav>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="sidenav-logo">
+          <img src="https://d32exi8v9av3ux.cloudfront.net/web/2019/05/30/fb6360f/website/common/svg/luno-logo.svg">
+        </div>
+        <a class="btn sign-up-btn" href="https://www.luno.com/en/signup">Get Started</a>
+        <!-- take care of styling -->
+        <div class="menu-sidenav">
+
+          <h4>Price charts</h4>
+          <ul class="menu-lists">
+            <li class="menu-list-item">
+              <a href="https://www.luno.com/en/price#BTC">Bitcoin Price</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="https://www.luno.com/en/price#ETH">Ethereum Price</a>
+            </li>
+          </ul></br>
+          <h4>Resources</h4>
+          <ul class="menu-lists">
+            <li class="menu-list-item">
+              <a href="">Blog</a>
+            </li>
+            <li class="menu-list-item">
+              <a href="">Help Center</a>
+            </li>
+            <li class="menu-list-item">
+                <a href="">Learning Portal</a>
+            </li>
+            <li class="menu-list-item">
+                <a href="">Fees & Features</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <!-- menu end -->
+
+    <div class="text-box">
+      <h1 class="heading-primary">
+        <span class="heading-primary-main">How to get started with Bitcoin</span>
+        <span class="heading-primary-sub">A Bitcoin education series in partnership with TimesLIVE</span>
+      </h1>
+      <a href="#" class="btn btn-banner btn-animated">Sign Up</a>
+    </div>
+  </header>
+
+  <div class="sectionUber">
+    <div class="sectionUberText">
+      <h1>Get EUR 10 of free Bitcoin</h1>
+      <h3>Enter code: <span class="promoCode">EUR10</span></h3>
+      <p>Redeem our promo code to get a free Bitcoin when you sign up with Luno.</p>
+      <p>Download our app on iOS or Android, or visit our website to join the evolution of money and build a better global financial
+        system.
+      </p>
+      <p>This exclusive offer is only valid for new Luno customers and redeemable from 12 June 2019 to 10 July 2019.</p>
+      <p>&nbsp;</p>
+      <p><a href="https://www.luno.com/legal/rewards-and-promotions"><span class="promo-code">Luno’s promotional rules</span></a>        | <a href="https://www.luno.com/help/articles/11000029864-promotions-at-luno"><span class="promo-code">How promotions work</span></a></p>
+    </div>
+    <div class="form-wrap">
+      <div class="container">
+        <span style="color: black; font-size:20px; line-height: 24px; font-weight: 500; margin: 20px 0 30px 0;">Sign Up</span>
+        <form>
+          <input type="text" required="" type="email" placeholder="Enter email address">
+          <input type="text" pattern="^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[\d]).*$" required="" type="password" placeholder="Choose password">
+          <p class="password-restrictions">Your password must be at least 8 characters and must contain numbers, lowercase and uppercase letters.</p>
+          <select class="country" name="location" required="">
+                  <option selected="true" disabled="" value="Select country...">Select country…</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AX">Åland Islands</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia, Plurinational State of</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">Congo, the Democratic Republic of the</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CI">Côte d'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curaçao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and McDonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">Korea, Democratic People's Republic of</option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People's Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestinian Territory, Occupied</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RE">Réunion</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="BL">Saint Barthélemy</option>
+                  <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin (French part)</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten (Dutch part)</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">South Georgia and the South Sandwich Islands</option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">United States Minor Outlying Islands</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela, Bolivarian Republic of</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.S.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                </select>
+
+          <div style="display: inline-flex; margin-bottom: 15px;">
+            <div style="display: inline-block; float: left;"><input type="checkbox"></div>
+            <div class="checkBox" style="display: inline-block;">
+              <p>I'd like to receive promos, tips and announcements (update or opt out at any time)</p>
+            </div>
+          </div>
+
+          <div class="recaptcha-wrapper">
+            <div class="g-recaptcha" data-sitekey="6Lfj4hATAAAAAPnTx8JPMeTG8ihF13cBF7vIfess"></div>
+          </div>
+          <p class="terms-conditions">By signing up I agree to the <a href="https://www.luno.com/en/legal/terms" target="_blank">Terms of Use</a>and
+            processing of my personal data as stated in the <a href="https://www.luno.com/en/legal/privacy" target="_blank">Privacy Policy</a></p>
+          <input type="button" value="Sign Up" class="btn signup-btn">
+          <a style="text-decoration: none; text-align: center;" href="https://www.luno.com/en/login">SIGN IN</a>
+        </form>
+        <div class="section sign-up-with">
+          <p style="font-size: 10px;">or sign up with</p>
+          <a href="https://accounts.google.com/o/oauth2/auth?access_type=online&amp;client_id=1078313900011-gqeq7c9lfuplt08f1rj97imu9bdhhogq.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Fwww.luno.com%2Flogin%2Foauth2v2&amp;response_type=code&amp;scope=profile+email&amp;state=provider%3D3%26redirect%3D%26token%3Db_FOJruwjXo1KNxoIS5m68RHlyU%253A1560257017007">
+              <img alt="Google" src="https://d32exi8v9av3ux.cloudfront.net/web/2019/06/10/71f9764/website/common/img/social-google.png">Google</a>
+          <a href="https://www.facebook.com/dialog/oauth?access_type=online&amp;client_id=1822420951318358&amp;redirect_uri=https%3A%2F%2Fwww.luno.com%2Flogin%2Foauth2v2&amp;response_type=code&amp;scope=email+public_profile&amp;state=provider%3D2%26redirect%3D%26token%3DSjGHZzvHIVn0BYLwgY1NIwMj5pM%253A1560257017007">
+                <img alt="Facebook" src="https://d32exi8v9av3ux.cloudfront.net/web/2019/06/10/71f9764/website/common/img/social-facebook.png" >Facebook </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section3">
+
+      <div class="text-box">
+          <p class="heading-primary">
+            <span class="heading-primary-main">It’s never too late to get started.</span>
+            <span class="heading-primary-sub">Buy, store and learn about Bitcoin and Ethereum now.</span>
+          </p>
+          <a class="btn" href="/en/signup"><img src="https://d32exi8v9av3ux.cloudfront.net/web/2019/06/11/08edba8/website/common/svg/website.svg" alt="Desktop Icon"></a>
+          
+          <a class="btn" href="https://play.google.com/store/apps/details?hl=en&amp;id=co.bitx.android.wallet"><img src="https://d32exi8v9av3ux.cloudfront.net/web/2019/06/11/08edba8/website/common/svg/store-google.svg" alt="Google Play Store Logo"></a>
+        </div>
+         
+              
+              
+            </div>
+           
+          
+            
+
+      
+    
+
+
+
+  
+
+  <footer class="uber-footer">
+    <div class="uber-footer-logo">
+      <img src="https://d32exi8v9av3ux.cloudfront.net/web/2019/06/10/71f9764/website/common/svg/luno-logo.svg" class="logo">
+      <p class="copyright">© Copyright 2019</p>
+      <div class="social-icons">
+        <div>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-youtube"></a>
+          <a href="https://medium.com/luno-money" target="_blank">
+            <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>Medium icon</title>
+              <defs></defs>
+              <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="footer" transform="translate(-253.000000, -177.000000)">
+                  <g id="luno" transform="translate(100.000000, 80.000000)">
+                    <g id="social" transform="translate(0.000000, 97.000000)">
+                      <g id="Stacked-Group-2" transform="translate(115.000000, 0.000000)">
+                        <g id="ico_social_web_footer_medium" transform="translate(38.000000, 0.000000)">
+                          <rect id="bounds" stroke="#FFFFFF" opacity="0.01" x="0.5" y="1.45652174" width="21" height="20.0434783"></rect>
+                          <path d="M21.95875,19.1304348 L21.95875,18.7658089 L20.244125,17.1066932 C20.092875,16.9928324 20.01725,16.8057752 20.048875,16.6200735 L20.048875,4.42340474 C20.01725,4.23770307 20.092875,4.05064591 20.244125,3.93678503 L22,2.27766938 L22,1.91304348 L15.91975,1.91304348 L11.58575,12.5712349 L6.655,1.91304348 L0.27775,1.91304348 L0.27775,2.27766938 L2.332,4.71618985 C2.53275,4.89646957 2.635875,5.15943398 2.608375,5.42510936 L2.608375,15.0111109 C2.668875,15.35676 2.5575,15.710542 2.311375,15.9626625 L0,18.7251443 L0,19.0897702 L6.55325,19.0897702 L6.55325,18.7251443 L4.241875,15.9626625 C3.993,15.710542 3.876125,15.3594709 3.922875,15.0111109 L3.922875,6.72095459 L9.6745,19.0897702 L10.34275,19.0897702 L15.283125,6.72095459 L15.283125,16.5794089 C15.283125,16.8423733 15.283125,16.8938818 15.1085,17.0660286 L13.332,18.7658089 L13.332,19.1304348 L21.95875,19.1304348 Z"
+                            id="Path" fill="#BDBDBD"></path>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" class="fa fa-instagram"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="uber-footer-links-wrapper">
+      <div class="uber-footer-links">
+
+        <h4>About</h4>
+        <ul class="footer-ul">
+          <li class="footer-li-item">
+            <a href="">Company</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Careers</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="uber-footer-links">
+
+        <h4>Resources</h4>
+        <ul class="footer-ul">
+          <li class="footer-li-item">
+            <a href="">Bitcoin Price</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Ethereum Price</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Blog</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Help Centre</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Learning Portal</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Fees &amp; Features</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="uber-footer-links">
+
+        <h4>Products</h4>
+        <ul class="footer-ul">
+
+          <li class="footer-li-item">
+            <a href="">Luno Bitcoin Wallet</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Luno Ethereum Wallet</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Luno Exchange</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Luno Business</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Luno API</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="uber-footer-links">
+        <h4>Other</h4>
+        <ul class="footer-ul">
+          <li class="footer-li-item">
+            <a href="">Terms of Use</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Customer Protection</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Legal &amp; Compliance</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Privacy Policy</a>
+          </li>
+          <li class="footer-li-item">
+            <a href="">Security</a>
+          </li>
+        </ul>
+      </div>
+      <div class="uber-footer-links">
+        <h4>Language</h4>
+        <ul class="footer-ul">
+
+
+          <li class="footer-li-item">
+            <a href="" hreflang="en">English</a>
+          </li>
+
+          <li class="footer-li-item">
+            <a href="" hreflang="fr">Français</a>
+          </li>
+
+          <li class="footer-li-item">
+            <a href="" hreflang="id">Indonesia</a>
+          </li>
+
+          <li class="footer-li-item">
+            <a href="" hreflang="it">Italiano</a>
+          </li>
+
+          <li class="footer-li-item">
+            <a href="" hreflang="nl">Nederlands</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+
+</html>
