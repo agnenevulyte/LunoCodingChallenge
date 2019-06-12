@@ -668,6 +668,17 @@ body {
     .section3 .text-box {
         top: 60%;
     }
+    .sectionUber .sectionUberText {
+        font-size: 18px;
+        margin-top: 20vh;
+        position: relative;
+        left: 10vh;
+    }
+      
+    .sectionUber .form-wrap {
+        position: relative;
+        right: 8vh;
+    }
     
   }
   
