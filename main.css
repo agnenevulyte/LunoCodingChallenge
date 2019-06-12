@@ -535,6 +535,7 @@ body {
 .section3 {
 /*     height: 50vh; */
     height: 40vh;
+    min-height: 400px;
     background-size: cover;
     background-position:bottom;
     position: relative;
