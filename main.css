@@ -533,7 +533,8 @@ body {
 /* SECTION 3 */
 
 .section3 {
-    height: 50vh;
+/*     height: 50vh; */
+    height: 40vh;
     background-size: cover;
     background-position:bottom;
     position: relative;
@@ -662,6 +663,9 @@ body {
     
     .uber-footer-logo .social-icons > div {
         width: 45%;
+    }
+    .section3 .text-box {
+        top: 60%;
     }
     
   }
