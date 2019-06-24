@@ -1,0 +1,838 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* 1.7 times bigger than the predefined line height */
+    line-height: 1.7; 
+    color: #777;
+}
+
+
+/* HEADER --------------------------------------------------- */
+.header {
+    /* 70% of a viewport height */
+    height: 70vh;
+    background-image: url("img/max-bender-580753-unsplash.jpg");
+    /* cover the viewport */
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.logo-box {
+    position: fixed;
+    z-index: 2000;
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    margin-bottom: 22px;
+}
+
+.compressed {
+    height: 64px;
+    background-color: #fff;
+    position: fixed;
+    color:black;
+    width: 100%;
+}
+
+.logo {
+    height: 35px;
+    font-size:30px;
+    cursor:pointer;
+    display: inline-block;
+    color: white;
+}
+.compressed .logo svg {
+    fill: #12326b;
+}
+
+.compressed .logo {
+    color: #12326b;
+}
+
+.logo-box .logo .menu-open {
+    display: inline-block;
+    font-size: 22px;
+    position: absolute;
+    line-height: 60px;
+}
+
+.logo-box .logo .svg-logo-wrap {
+    fill: #fff;
+    left: 60px;
+    position: absolute;
+}
+
+.logo-box .logo svg {
+    width: 80px;
+    margin-left: 10px;  
+}
+
+
+.text-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+.heading-primary {
+    color: white;
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 48px;
+    font-weight: 400;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* backface-visibility to stop shaking */
+    backface-visibility: hidden;
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 3s; */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 36px;
+    font-weight: 400;
+    opacity: .7;
+    animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80% {
+        transform: translateX(-10px);
+        /* transform: rotate(180deg) */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+
+/* normal state and visited state */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    /* reference */
+    position: relative;
+}
+
+/* on hover */
+.btn:hover {
+ transform: translateY(-3px);
+ /* box-shadow: x y blur rgba(black,transparency (20% opacity)*/
+ box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+/* When clicked */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn.btn-banner {
+    display: none;
+}
+@media(max-width: 993px) {
+    .btn.btn-banner {
+        height: auto;
+        padding: 10px 40px;
+        font-weight: 600;
+        color: #fff;
+        background: 0 0;
+        border: 1px solid #fff;
+        display: inline-block;
+        width: fit-content;
+    }
+    
+    /* sudo elements */
+    .btn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        /* all after things are absolute, only the top one is relative */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* position of elements if they are on top of one another z-index: -1 is always behind */
+        z-index: -1;
+        transition: all .4s;
+    
+    }
+    
+    .btn-banner::after {
+        background: 0 0;
+    }
+    
+    .btn:hover::after {
+        /* scale(2) makes the button twice bigger */
+        transform: scaleX(1.4) scaleY(1.6);
+        /* opacity 0 sets to invisible */
+        opacity: 0;
+    }
+    
+    .btn-animated {
+        /* how slowly moves, fast at the beggining slow at the end, delay */
+        animation: moveInBottom .5s ease-out .75s;
+        /* sets element to none at the beginning */
+        animation-fill-mode: backwards;
+    }
+}
+
+
+
+
+
+/* navigation bar */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  .sidenav-logo {
+      margin-left: 42px;
+      margin-bottom: 10px;
+  }
+
+
+  .sidenav-logo img {
+    width: 80px;
+  }
+
+  .btn.sign-up-btn {
+    display: block;
+    margin-top: 20px;
+    background: #ef476f;
+    border: #ef476f;
+    height: 56px;
+    padding: 0 30px;
+    font-size: 22px;
+    line-height: 54px;
+    letter-spacing: 1.1px;
+    border-radius: 2px;
+    color: white;
+    text-transform: inherit;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+
+  .menu-sidenav {
+    margin: 20px 0 10px 5px;
+  }
+
+  .menu-sidenav h4 {
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #bdbdbd;
+}
+
+  .menu-sidenav .menu-lists {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-top: 0;
+  }
+  .menu-sidenav .menu-lists .menu-list-item{
+    position: relative;
+    display: block;
+}
+
+.menu-sidenav ul li a{
+    padding: 8px 20px 8px 20px;
+    font-size: 16px;
+    line-height: 13px;
+    color: #757575;
+}
+
+.menu-sidenav a:hover {
+    background-color:#f2f2f2;
+    color: #757575;
+}
+
+/* END OF HEADER --------------------------------------------------- */
+
+  /* section Uber */
+  .sectionUber {
+    height: 100%;
+    min-height: 870px;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%; 
+    background-color: #f2f2f2;
+    padding-bottom: 5vh;
+  }
+
+  .sectionUberText {
+    width: 40%;
+    display: inline-block;
+    margin-right: 8%;
+    margin-top: 25vh;
+
+  }
+
+  .promo-code {
+    color: #0091ff;
+    text-decoration: none;
+
+  }
+
+  .uberSpace {
+    width: 5%;
+    display: inline-block;
+  }
+
+  /* Sign Up form */
+
+  .form-wrap {
+    float: right;
+    display: inline-block;
+  }
+
+/* FORM */
+.form-wrap {
+    margin-top: 40px;
+}
+  .container {
+    margin: auto;
+    height: auto;
+    width: 360px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  
+  .container span {
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 25px;
+  }
+  .container form {
+    padding: 0 35px;
+    padding-bottom: 20px;
+  }
+  .container input[type="text"],
+  .container input[type="password"],
+  .container select {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border: none;
+    font-size: 14px;
+    border-bottom: 2px solid #9FB1BC;
+  }
+  .container input[type="text"]:focus,
+  .container input[type="password"]:focus {
+    outline: none;
+    border-color: #3D348B;
+  }
+  
+  .container input[type="button"] {
+    width: 60%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #0091ff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    min-width: 256px;
+    /* min-width: 180px; */
+    margin: 30px auto;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #0091ff;
+  }
+  .container input[type="button"]:hover {
+    opacity: .8;
+  }
+  .container form a {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    color: #9FB1BC;
+    font-size: 12px;
+  }
+  .container form a:hover {
+    color: #000;
+  }
+
+
+  form .password-restrictions {
+    font-size: 10px;
+    line-height: 13px;
+    text-align: left;
+    margin-top: -17px;
+    margin-bottom: 15px;
+  }
+
+  form .checkBox {
+    display: inline-block;
+    font-size: 12px;
+    text-align: justify;
+    line-height: 13px;
+    margin-left: 10px;
+    float: right;
+  }
+
+  .container form a.reset-recaptcha {
+    font-size: 14px!important;
+    color: #0091ff;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .container form a {
+    font-size: 14px!important;
+    color: #0091ff;
+  }
+
+  .recaptcha-wrapper {
+      margin-bottom: 15px  
+  }
+
+  .g-recaptcha {
+      margin-bottom:15px;
+  }
+
+  .container form .terms-conditions {
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 13px;
+  }
+
+  .container form .terms-conditions a {
+    font-size: 12px!important;
+    color: #0091ff;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 0;
+  }
+
+  .section.sign-up-with {
+    padding: 16px 16px 26px 16px;
+    text-align: center;
+    background: #f2f2f2;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+.section.sign-up-with p {
+    margin-bottom: 7px;
+}
+  .section.sign-up-with a {
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px 0px 4px 5px;
+    margin-right: 6px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #12326b;
+    text-transform: uppercase;
+    border: 1px solid #12326b;
+    border-radius: 2px;
+    text-decoration: none;
+  }
+
+/* END OF FORM */
+
+/* SECTION 3 */
+
+.section3 {
+    height: 50vh;
+    background-size: cover;
+    background-position:bottom;
+    position: relative;
+    background-image: url("img/matteo-bernardis-428293-unsplash.jpg"); 
+}
+
+.section3 .text-box {
+    top: 50%;
+}
+
+.section3 .btn {
+    border: 1px solid grey;
+    border-radius: 0;
+    max-width: 200px;
+    margin: 5px;
+}
+
+.section3 .btn img {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    margin-left: -10px;
+}
+/* END of SECTION 3 */
+
+/* FOOTER */
+.uber-footer {
+    background: #f2f2f2;
+    padding: 5%;
+}
+
+.uber-footer-logo {
+    display: inline-grid;
+    width: 20%;
+}
+
+.uber-footer-logo img {
+    width: 80px;
+}
+
+.uber-footer .copyright {
+    font-size: 13px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    color: #757575;
+}
+
+.uber-footer-logo .social-icons > div {
+    width: 55%;
+}
+.uber-footer-links {
+    display: inline-block;
+    width: 16%;
+    height: 246px
+}
+
+.uber-footer-links h4 {
+    color: #757575;
+    text-transform: uppercase;
+}
+.uber-footer-links .footer-ul {
+    display: inline-block;
+    float: left;
+    list-style-type: none;
+}
+
+.uber-footer-links .footer-ul a {
+    padding: 4px 10px 4px 0;
+    color: #757575;
+    word-break: break-word;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.uber-footer .fa {
+    margin: 5px;
+    padding-top: 5px;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: rgb(189, 189, 189);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.uber-footer-links-wrapper {
+    display: inline-block;
+    width: 78%;
+}
+
+
+/* END OF FOOTER */
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    
+    //CSS
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) {
+    
+    .uber-footer-logo .social-icons > div {
+        width: 45%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  /* @media (min-width: 768px) and (max-width: 1024px) {
+    
+    //CSS
+    
+  }
+   */
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (max-width: 1024px) {
+    .sectionUberText {
+        width: 100%;
+        display: block;
+        margin-right: 8%;
+        margin-top: 0;
+        text-align: center;
+        padding-top: 5vh;
+    }
+
+    .form-wrap {
+        margin-top: 0;
+        padding-top: 5vh;
+        display: block;
+        margin: 0 auto;
+        float: none;
+    }
+    .uber-footer-logo {
+        max-width: 129px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .uber-footer-logo img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .uber-footer .copyright {
+        text-align: center;
+    }
+
+    .uber-footer-links {
+        display: flex;
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 30px;
+        text-align: left;
+        border-top: 1px solid #e0e0e0;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .uber-footer-links h4 {
+        width: 100%;
+    }
+
+    .uber-footer-links .footer-ul {
+        width: 100%;
+    }
+
+    .uber-footer-logo .social-icons > div {
+        margin-left: 20px;
+        width: 100%;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .heading-primary-main {
+        font-size: 46px;
+        line-height: 55px;
+        margin-bottom: 15px;
+    }
+    .heading-primary-sub {
+        font-size: 34px;
+        line-height: 40px;
+        margin: 0 5px;
+    }
+    .heading-primary {
+        margin-bottom: 25px;
+    }
+    .btn.btn-banner {
+        padding: 10px 40px;
+        margin-bottom: 20px;
+    }
+    .btn:link, .btn:visited {
+        text-transform: capitalize;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+
+    .container {
+        width: 360px;
+    }
+    .heading-primary-main {
+        font-size: 32px;
+        line-height: 35px;
+        margin-bottom: 15px;
+    }
+    .heading-primary-sub {
+        font-size: 24px;
+        line-height: 31px;
+        margin: 0 5px;
+    }
+    .heading-primary {
+        margin-bottom: 25px;
+    }
+    .btn.btn-banner {
+        padding: 10px 30px;
+    }
+    .btn:link, .btn:visited {
+        text-transform: capitalize;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+
+    .heading-primary-main {
+        font-size: 28px;
+        line-height: 33px;
+        margin-bottom: 15px;
+    }
+    .heading-primary-sub {
+        font-size: 20px;
+        line-height: 29px;
+        margin: 0 5px;
+    }
+    .heading-primary {
+        margin-bottom: 17px;
+    }
+    .btn.btn-banner {
+        padding: 5px 20px;
+    }
+    .btn:link, .btn:visited {
+        text-transform: capitalize;
+    }
+
+    .container {
+        width: 100%;
+    }
+    .container input[type="button"] {
+        width: 100%;
+        min-width: 154px;
+      }
+      .section.sign-up-with a {
+          margin-bottom: 10px;
+      }
+      .country option {
+          width: 150px;
+      }
+      option {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+      }
+      #rc-imageselect, .g-recaptcha {
+          transform:scale(0.7);
+          -webkit-transform:scale(0.7);
+          transform-origin:0 0;
+          -webkit-transform-origin:0 0;
+          /* margin-left: -28px; */
+    }
+    
+  }
