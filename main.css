@@ -533,7 +533,9 @@ body {
 /* SECTION 3 */
 
 .section3 {
-    height: 50vh;
+/*     height: 50vh; */
+    height: 40vh;
+    min-height: 400px;
     background-size: cover;
     background-position:bottom;
     position: relative;
@@ -556,6 +558,19 @@ body {
     margin: 0 auto;
     display: block;
     margin-left: -10px;
+}
+
+.section3 .text-box .heading-primary {
+    margin-bottom: 40px;
+}
+
+.section3 .text-box .heading-primary .heading-primary-main {
+    font-size: 40px;
+    line-height: 50px
+}
+
+.section3 .text-box .heading-primary .heading-primary-sub {
+    font-size: 32px;
 }
 /* END of SECTION 3 */
 
@@ -649,6 +664,20 @@ body {
     
     .uber-footer-logo .social-icons > div {
         width: 45%;
+    }
+    .section3 .text-box {
+        top: 60%;
+    }
+    .sectionUber .sectionUberText {
+        font-size: 18px;
+        margin-top: 20vh;
+        position: relative;
+        left: 10vh;
+    }
+      
+    .sectionUber .form-wrap {
+        position: relative;
+        right: 8vh;
     }
     
   }
@@ -747,6 +776,15 @@ body {
     .btn:link, .btn:visited {
         text-transform: capitalize;
     }
+    .section3 .text-box .heading-primary .heading-primary-main {
+        font-size: 40px;
+        line-height: 45px;
+    }
+
+    .section3 .text-box .heading-primary .heading-primary-sub {
+        font-size: 30px;
+        line-height: 36px;
+    }
     
   }
   
@@ -778,6 +816,30 @@ body {
     }
     .btn:link, .btn:visited {
         text-transform: capitalize;
+    }
+    
+      .section3 {
+        height: 40vh;
+      }
+      
+    .section3 .text-box .heading-primary {
+        margin-bottom: 20px;
+    }
+    
+    .section3 .text-box .heading-primary {
+        margin-bottom: 30px;
+    }
+     
+    .section3 .text-box .heading-primary .heading-primary-main {
+        font-size: 32px;
+        line-height: 35px;
+        padding: 5px;
+    }
+
+    .section3 .text-box .heading-primary .heading-primary-sub {
+        font-size: 24px;
+        line-height: 31px;
+        padding: 5px;
     }
     
   }
@@ -833,6 +895,37 @@ body {
           transform-origin:0 0;
           -webkit-transform-origin:0 0;
           /* margin-left: -28px; */
+      }
+      .section3 {
+        min-height: 400px;
+      }
+      
+      .section3 .text-box .heading-primary {
+            margin-bottom: 20px;
+      }
+      
+      .section3 .text-box .heading-primary .heading-primary-main {
+        font-size: 28px;
+        line-height: 33px;
+        padding: 5px;
+        margin-bottom: 0;
+      }
+
+    .section3 .text-box .heading-primary .heading-primary-sub {
+        font-size: 20px;
+        line-height: 29px;
+        padding: 5px;
+        margin-bottom: 0;
     }
     
   }
+
+@media(min-width: 320px) and (max-width: 370px) {
+    #rc-imageselect, .g-recaptcha {
+      transform:scale(0.6);
+      -webkit-transform:scale(0.6);
+      transform-origin:0 0;
+      -webkit-transform-origin:0 0;
+      /* margin-left: -28px; */
+    }
+}
